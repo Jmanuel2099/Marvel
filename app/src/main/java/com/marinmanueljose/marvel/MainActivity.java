@@ -88,30 +88,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public Bitmap dataToImage(Data data){
-        Log.d("joseM", "hola entre a dataToIM");
+        Log.d("joseM", "hola entre a dataToImg");
         return BitmapFactory.decodeByteArray(data.toBytes(),0, data.length());
     }
 
     public void getImgCharacter(CharacterInfo infoImg){
         String strURL = infoImg.imgURL();
-        Log.d("Img", strURL);
-        URL url = null;
-        try {
-            url = new URL(strURL);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        URLRequest request = new URLRequest(url);
-        //Log.d("reObj", String.valueOf(request));
-        URLSession.getShared().dataTask(request, (data, response, error) -> {
-            HTTPURLResponse resp = (HTTPURLResponse) response;
-            if (resp.getmdStatusCode() == 200) {
-                final Bitmap image = dataToImage(data);
-                showImg(image);
-            }
-        }).resume();
-        /*String strURL = infoImg.imgURL();
-        //Log.d("imgURL", strURL);
+        Log.d("imgURL", strURL);
         URL url = null;
         try {
             url = new URL(strURL);
@@ -131,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }else {
                 Log.d("Error not found img", String.valueOf(resp.getStatusCode()));
             }
-        }).resume();*/
+        }).resume();
     }
 
 
