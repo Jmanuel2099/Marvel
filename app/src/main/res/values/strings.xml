@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <string name="search">Search</string>
+    <string name="entry_character">Entry the character</string>
+</resources>
